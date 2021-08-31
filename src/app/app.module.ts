@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@material/material.module';
+import { CardsModule } from './cards/cards.module';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -14,6 +16,7 @@ import { MaterialModule } from '@material/material.module';
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CardsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

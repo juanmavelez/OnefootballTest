@@ -1,4 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --red-background: #d42f2f;
+  --blue-background: #0b66bb;
+  --yellow-background: #ddda36;
+  --white: white;
+  --black: black;
+  --gradient-background: linear-gradient(90deg, #021868 19.53%, #3355cf 128%);
+  --title-font: "Exo", sans-serif;
+  --paragraph-font: "Cairo", sans-serif;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+body {
+  display: grid;
+  margin: 0;
+  height: 100%;
+  align-items: center;
+  font-family: var(--paragraph-font);
+  background-color: var(--gradient-background);
+}
+h1 {
+  font-family: var(--title-font);
+  font-size: 3.6rem;
+  font-weight: bold;
+  line-height: 4.8rem;
+}
+h2 {
+  font-family: var(--paragraph-font);
+  font-size: 3.6rem;
+  font-weight: bold;
+  line-height: 4.8rem;
+  text-align: center;
+}
+p {
+  font-family: var(--paragraph-font);
+  font-size: 1.4rem;
+}
+
+/*-----BUTTON-----*/
+.button {
+  text-transform: uppercase;
+  background-color: var(--blue-background);
+  color:var(--white);
+}
+.button--default{
+  width: 252px;
+  height: 34px;
+}
+.button--medium{
+  width: 180px;
+  height: 34px;
+}
+.button--small{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+}
