@@ -4,14 +4,14 @@
   </figure>
   <h2>{{player.id}}</h2>
   <h3>{{player.profile.team}}</h3>
-  <div *ngIf="showStats" class="profile">
+  <div *ngIf="!showStats" class="profile">
     <ul>
       <li>Age: {{player.profile.age}} years old</li>
       <li>Role: {{player.profile.role}}</li>
     </ul>
     <button mat-button class="button button--medium" (click)="showStats=false">Stats</button>
   </div>
-  <div *ngIf="!showStats" class="stats">
+  <div *ngIf="showStats" class="stats">
     <ul>
       <li>Games: {{player.stats.gamesPlayed}}</li>
       <li>Goals: {{player.stats.goals}}</li>
