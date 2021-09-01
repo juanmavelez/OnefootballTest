@@ -6,7 +6,7 @@
   --yellow-background: #ddda36;
   --white: white;
   --black: black;
-  --gradient-background: linear-gradient(90deg, #021868 19.53%, #3355cf 128%);
+  --gradient-background:  linear-gradient(90deg, #021868 -34.37%, #132D8C 36.22%, #3355CF 115.13%);
   --title-font: "Exo", sans-serif;
   --paragraph-font: "Cairo", sans-serif;
 }
@@ -14,6 +14,14 @@
 *:before,
 *:after {
   box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
 }
 html {
   font-size: 62.5%;
@@ -25,7 +33,8 @@ body {
   height: 100%;
   align-items: center;
   font-family: var(--paragraph-font);
-  background-color: var(--gradient-background);
+  font-size: 1.4rem;
+  background: var(--gradient-background);
 }
 h1 {
   font-family: var(--title-font);
@@ -40,6 +49,13 @@ h2 {
   line-height: 4.8rem;
   text-align: center;
 }
+h3 {
+  font-family: var(--paragraph-font);
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 3.4rem;
+  text-align: center;
+}
 p {
   font-family: var(--paragraph-font);
   font-size: 1.4rem;
@@ -49,23 +65,36 @@ p {
 .button {
   text-transform: uppercase;
   background-color: var(--blue-background);
-  color:var(--white);
+  color: var(--white);
 }
-.button--default{
+.button--default {
   width: 252px;
   height: 34px;
 }
-.button--medium{
+.button--medium {
   width: 180px;
   height: 34px;
 }
-.button--small{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.button--small {
   width: 35px;
   height: 35px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+}
+@media (min-width: 900px) {
+  body {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  h1 {
+    font-size: 6.4rem;
+    line-height: 8.5rem;
+  }
+  .button--default {
+    width: 350px;
+  }
+  .button--medium {
+    width: 250px;
+  }
+  .button--small {
+    width: 50px;
+  }
 }

@@ -8,11 +8,10 @@ import { IPlayerData } from '@core/models/models';
 })
 export class PlayerCardComponent implements OnInit {
   @Input() player: IPlayerData;
-  stats: boolean;
+  showStats = false;
   constructor() {
-    this.stats = false;
     this.player = {
-      id: 'string',
+      id: '',
       profile: {
         age: '',
         role: '',

@@ -1,26 +1,26 @@
 <section>
   <figure>
-    <img src="" alt="">
+    <img src="{{player.profile.picture}}" alt="">
   </figure>
   <h2>{{player.id}}</h2>
   <h3>{{player.profile.team}}</h3>
-  <div *ngIf="stats" class="profile">
+  <div *ngIf="showStats" class="profile">
     <ul>
-      <li>Age: {{player.profile.age}}</li>
+      <li>Age: {{player.profile.age}} years old</li>
       <li>Role: {{player.profile.role}}</li>
     </ul>
-    <button class="button button--medium" (onclick)="stats=!stats">Stats</button>
+    <button mat-button class="button button--medium" (click)="showStats=false">Stats</button>
   </div>
-  <div *ngIf="!stats" class="stats">
+  <div *ngIf="!showStats" class="stats">
     <ul>
       <li>Games: {{player.stats.gamesPlayed}}</li>
       <li>Goals: {{player.stats.goals}}</li>
-      <li>Passing Acurracy: {{player.stats.passingAccuracy}}</li>
+      <li>Passing Acurracy: {{player.stats.passingAccuracy}}%</li>
       <li>Fouls: {{player.stats.foulsConceded}}</li>
       <li>Red Cards: {{player.stats.redCards}}</li>
       <li>Yellow Cards: {{player.stats.yellowCards}}</li>
     </ul>
-    <button class="button button--small" (onclick)="stats=!stats">
+    <button mat-button class="button button--small" (click)="showStats=true">
       <mat-icon>arrow_back</mat-icon>
     </button>
   </div>

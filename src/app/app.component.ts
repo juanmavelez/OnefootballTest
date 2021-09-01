@@ -11,8 +11,9 @@ import { IPlayerData } from '@core/models/models';
 export class AppComponent {
   form: FormGroup;
   playerData: IPlayerData;
-  playerIsFound = false;
-  error = false;
+  playerIsFound = false; //variable used to display the palyers card
+  error = false; //variable used to display the error card
+
   constructor(
     private playerService: PlayerService,
     private formBuilder: FormBuilder
@@ -41,15 +42,16 @@ export class AppComponent {
 
   searchPlayer() {
     const value = this.form.value;
-    if (value) {
-      try {
-        this.playerService.getPlayer(value.playerId).subscribe((res) => {
-          this.playerIsFound = true;
-          this.playerData = res;
-        });
-      } catch (err) {
+    this.playerService.getPlayer(value.playerId).subscribe(
+      (res) => {
+        this.error = false;
+        this.playerIsFound = true;
+        this.playerData = res;
+      },
+      () => {
+        this.playerIsFound = false;
         this.error = true;
       }
-    }
+    );
   }
 }

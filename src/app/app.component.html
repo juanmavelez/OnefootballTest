@@ -1,4 +1,4 @@
-<mat-card class="card">
+<mat-card class="card" [ngClass]=" !playerIsFound && !error ? 'simple--grid' : 'multiple--grid'">
   <section class="section1">
     <h1>Player Archive</h1>
     <figure>
@@ -7,10 +7,11 @@
     <form [formGroup]="form" (ngSubmit)="searchPlayer()">
       <mat-form-field appearance="outline" class="input">
         <mat-label>Enter player's id:</mat-label>
-        <input type="text" matInput placeholder="Enter player's id" formControlName="playerId">
+        <input id="input" type="text" matInput placeholder="Enter player's id" formControlName="playerId">
       </mat-form-field>
       <button mat-stroked-button class="button button--default" type="submit">Submit</button>
     </form>
   </section>
-  <app-not-found-card></app-not-found-card>
+  <app-not-found-card *ngIf="error"></app-not-found-card>
+  <app-player-card *ngIf="playerIsFound" [player]="playerData"></app-player-card>
 </mat-card>
