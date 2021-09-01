@@ -53,6 +53,9 @@ ul > li {
 }
 
 @media (min-width: 900px) {
+  section > figure {
+  height: 300px;
+}
   section > h2 {
     margin-top: 50px;
     margin-bottom: -10px;
