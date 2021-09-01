@@ -9,7 +9,7 @@
       <li>Age: {{player.profile.age}} years old</li>
       <li>Role: {{player.profile.role}}</li>
     </ul>
-    <button mat-button class="button button--medium" (click)="showStats=false">Stats</button>
+    <button mat-button class="button button--medium" (click)="showStats=true">Stats</button>
   </div>
   <div *ngIf="showStats" class="stats">
     <ul>
@@ -20,7 +20,7 @@
       <li>Red Cards: {{player.stats.redCards}}</li>
       <li>Yellow Cards: {{player.stats.yellowCards}}</li>
     </ul>
-    <button mat-button class="button button--small" (click)="showStats=true">
+    <button mat-button class="button button--small" (click)="showStats=false">
       <mat-icon>arrow_back</mat-icon>
     </button>
   </div>
